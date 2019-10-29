@@ -1,0 +1,17 @@
+{
+  "name": "autoit-advanced-descriptor",
+  "version": "1.0.0",
+  "description": "Generate AutoIT advanced window descriptions according to https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm",
+  "main": "index.js",
+  "repository": "git+https://github.com/schubev/autoit-advanced-descriptor",
+  "scripts": {
+    "bsb:make": "bsb -make-world",
+    "bsb:clean": "bsb -clean-world",
+    "bsb:watch": "bsb -w"
+  },
+  "author": "Victor Schubert <v@schu.be>",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^6.2.1"
+  }
+}
