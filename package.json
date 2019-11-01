@@ -1,8 +1,8 @@
 {
   "name": "autoit-advanced-descriptor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate AutoIT advanced window descriptions according to https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm",
-  "main": "lib/js/index.js",
+  "main": "lib/js/src/index.js",
   "repository": "git+https://github.com/schubev/autoit-advanced-descriptor",
   "scripts": {
     "bsb:make": "bsb -make-world",
