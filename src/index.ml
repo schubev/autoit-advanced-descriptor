@@ -39,7 +39,7 @@ let addBooleanDescriptor acc key value =
       ()
 
 let descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~last
-    ~active ~x ~y ~w ~h ~instance () =
+    ~active ~x ~y ~w ~h ~instance =
   let descriptors = [||] in
   addStringDescriptor descriptors "TITLE" title ;
   addStringDescriptor descriptors "CLASS" className ;
@@ -68,4 +68,4 @@ let descriptor windowDescription =
   let w = windowDescription |. wGet in
   let h = windowDescription |. hGet in
   descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~instance
-    ~active ~last ~x ~y ~w ~h ()
+    ~active ~last ~x ~y ~w ~h

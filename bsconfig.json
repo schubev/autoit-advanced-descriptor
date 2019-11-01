@@ -1,4 +1,13 @@
 {
 	"name": "autoit-advanced-descriptor",
-	"sources": ["src"]
+	"sources": [
+		"src",
+		{
+			"dir": "__tests__",
+			"type": "dev"
+		}
+	],
+	"bs-dev-dependencies": [
+		"@glennsl/bs-jest"
+	]
 }

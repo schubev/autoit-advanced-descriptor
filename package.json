@@ -7,11 +7,15 @@
   "scripts": {
     "bsb:make": "bsb -make-world",
     "bsb:clean": "bsb -clean-world",
-    "bsb:watch": "bsb -w"
+    "bsb": "bsb -w",
+    "bsb:watch": "bsb -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "Victor Schubert <v@schu.be>",
   "license": "MIT",
   "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.9",
     "bs-platform": "^6.2.1"
   }
 }
