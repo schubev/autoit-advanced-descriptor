@@ -1,6 +1,6 @@
 {
   "name": "autoit-advanced-descriptor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate AutoIT advanced window descriptions according to https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm",
   "main": "lib/js/src/index.js",
   "repository": "git+https://github.com/schubev/autoit-advanced-descriptor",
