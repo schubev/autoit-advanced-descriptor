@@ -1,0 +1,31 @@
+#+TITLE: AutoIT advanced descriptor
+
+This module exposes a single function which produces AutoIT advanced
+descriptors as described by [[https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm][the AutoIT documentation]]. The ~descriptor~
+function has a single object parameter whose optional keys are used as
+the contents of the descriptor. For example,
+
+#+BEGIN_SRC javascript
+import { descriptor } from 'autoit-advanced-descriptor'
+
+descriptor({
+  className: 'Notepad',
+  instance: 2
+}) === '[CLASS:Notepad; INSTANCE:2]'
+#+END_SRC
+
+The following keys are supported:
+
+| key             | type    | AutoIT key  |
+|-----------------+---------+-------------|
+| title           | String  | TITLE       |
+| className       | String  | CLASS       |
+| regexpTitle     | String  | REGEXPTITLE |
+| regexpClassName | String  | REGEXPCLASS |
+| instance        | Integer | INSTANCE    |
+| active          | Boolean | ACTIVE      |
+| last            | Boolean | LAST        |
+| x               | Integer | X           |
+| y               | Integer | Y           |
+| w               | Integer | W           |
+| h               | Integer | H           |
