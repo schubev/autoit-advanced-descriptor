@@ -1,4 +1,4 @@
-export function descriptor(windowDescription: {
+export type WindowDescription = {
   title?: string
   className?: string
   regexpTitle?: string
@@ -10,4 +10,6 @@ export function descriptor(windowDescription: {
   y?: number
   w?: number
   h?: number
-}): string
+}
+
+export function descriptor(windowDescription: WindowDescription): string
