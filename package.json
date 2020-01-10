@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Generate AutoIT advanced window descriptions according to https://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.htm",
   "main": "lib/js/src/index.js",
+  "types": "src/index.d.ts",
   "repository": "git+https://github.com/schubev/autoit-advanced-descriptor",
   "scripts": {
     "bsb:make": "bsb -make-world",
