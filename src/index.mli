@@ -3,6 +3,7 @@ type windowDescription =
   ; className: string Js.Nullable.t
   ; regexpTitle: string Js.Nullable.t
   ; regexpClassName: string Js.Nullable.t
+  ; text: string Js.Nullable.t
   ; last: bool Js.Nullable.t
   ; active: bool Js.Nullable.t
   ; x: int Js.Nullable.t
@@ -17,6 +18,7 @@ val descriptorTagged :
   -> className:string Js.Nullable.t
   -> regexpTitle:string Js.Nullable.t
   -> regexpClassName:string Js.Nullable.t
+  -> text:string Js.Nullable.t
   -> last:bool Js.Nullable.t
   -> active:bool Js.Nullable.t
   -> x:int Js.Nullable.t

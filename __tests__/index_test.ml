@@ -2,12 +2,13 @@ open Jest
 open Expect
 open Index
 
-let d ?title ?className ?regexpTitle ?regexpClassName ?last ?active ?x ?y ?w ?h
-    ?instance () =
+let d ?title ?className ?regexpTitle ?regexpClassName ?text ?last ?active ?x ?y
+    ?w ?h ?instance () =
   let title = title |. Js.Nullable.fromOption in
   let className = className |. Js.Nullable.fromOption in
   let regexpTitle = regexpTitle |. Js.Nullable.fromOption in
   let regexpClassName = regexpClassName |. Js.Nullable.fromOption in
+  let text = text |. Js.Nullable.fromOption in
   let last = last |. Js.Nullable.fromOption in
   let active = active |. Js.Nullable.fromOption in
   let x = x |. Js.Nullable.fromOption in
@@ -15,7 +16,7 @@ let d ?title ?className ?regexpTitle ?regexpClassName ?last ?active ?x ?y ?w ?h
   let w = w |. Js.Nullable.fromOption in
   let h = h |. Js.Nullable.fromOption in
   let instance = instance |. Js.Nullable.fromOption in
-  descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~last
+  descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~text ~last
     ~active ~x ~y ~w ~h ~instance
 
 let cases =
@@ -35,7 +36,8 @@ let cases =
   ; ( "[TITLE:toto; CLASS:ta;;ta]"
     , fun () -> d ~title:"toto" ~className:"ta;ta" () )
   ; ( "[TITLE:to;;to; CLASS:ta;;ta]"
-    , fun () -> d ~title:"to;to" ~className:"ta;ta" () ) ]
+    , fun () -> d ~title:"to;to" ~className:"ta;ta" () )
+  ; ("[TEXT:text text text]", fun () -> d ~text:"text text text" ()) ]
 
 let makeTest (expected, case) =
   test expected (fun () -> expect (case ()) |> toEqual expected)

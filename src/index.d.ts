@@ -3,6 +3,7 @@ export interface WindowDescription {
   readonly className?: string
   readonly regexpTitle?: string
   readonly regexpClassName?: string
+  readonly text?: string
   readonly instance?: number
   readonly active?: boolean
   readonly last?: boolean

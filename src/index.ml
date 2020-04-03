@@ -3,6 +3,7 @@ type windowDescription =
   ; className: string Js.Nullable.t
   ; regexpTitle: string Js.Nullable.t
   ; regexpClassName: string Js.Nullable.t
+  ; text: string Js.Nullable.t
   ; last: bool Js.Nullable.t
   ; active: bool Js.Nullable.t
   ; x: int Js.Nullable.t
@@ -38,13 +39,14 @@ let addBooleanDescriptor acc key value =
   | Some false | None ->
       ()
 
-let descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~last
-    ~active ~x ~y ~w ~h ~instance =
+let descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~text
+    ~last ~active ~x ~y ~w ~h ~instance =
   let descriptors = [||] in
   addStringDescriptor descriptors "TITLE" title ;
   addStringDescriptor descriptors "CLASS" className ;
   addStringDescriptor descriptors "REGEXPTITLE" regexpTitle ;
   addStringDescriptor descriptors "REGEXPCLASS" regexpClassName ;
+  addStringDescriptor descriptors "TEXT" text ;
   addIntegerDescriptor descriptors "INSTANCE" instance ;
   addBooleanDescriptor descriptors "ACTIVE" active ;
   addBooleanDescriptor descriptors "LAST" last ;
@@ -60,6 +62,7 @@ let descriptor windowDescription =
   let className = windowDescription |. classNameGet in
   let regexpTitle = windowDescription |. regexpTitleGet in
   let regexpClassName = windowDescription |. regexpClassNameGet in
+  let text = windowDescription |. textGet in
   let instance = windowDescription |. instanceGet in
   let active = windowDescription |. activeGet in
   let last = windowDescription |. lastGet in
@@ -67,5 +70,5 @@ let descriptor windowDescription =
   let y = windowDescription |. yGet in
   let w = windowDescription |. wGet in
   let h = windowDescription |. hGet in
-  descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~instance
-    ~active ~last ~x ~y ~w ~h
+  descriptorTagged ~title ~className ~regexpTitle ~regexpClassName ~text
+    ~instance ~active ~last ~x ~y ~w ~h
